@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dental Care App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🦷 Dental Care Records</h1>
+
+    <form id="form">
+      <input id="patient" placeholder="Patient Name" required />
+      <input id="doctor" placeholder="Doctor Name" />
+      <input id="type" placeholder="Treatment Type" />
+      <label>Collection Date</label><input id="collection" type="date" />
+      <label>Delivery Date</label><input id="delivery" type="date" />
+      <button type="submit">➕ Add Record</button>
+    </form>
+
+    <div class="filter">
+      <input id="search" placeholder="Search by Doctor Name" />
+      <button onclick="exportPDF()">📄 Export PDF</button>
+      <button onclick="window.print()">🖨️ Print</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Patient</th><th>Doctor</th><th>Type</th>
+          <th>Collection</th><th>Delivery</th><th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="records"></tbody>
+    </table>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
